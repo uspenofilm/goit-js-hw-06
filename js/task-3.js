@@ -2,19 +2,19 @@ class StringBuilder {
   #value;
 
   constructor(initialValue) {
-    this.#value = [initialValue];
+    this.#value = initialValue;
   }
 
   getValue() {
-    return this.#value.join("");
+    return this.#value;
   }
 
   padEnd(str) {
-    this.#value.push(str);
+    this.#value = this.#value.padEnd(this.#value.length + str.length, str);
   }
 
   padStart(str) {
-    this.#value.unshift(str);
+    this.#value = this.#value.padStart(this.#value.length + str.length, str);
   }
 
   padBoth(str) {
